@@ -2,7 +2,7 @@ import vcf
 
 
 class snpfilter():
-	'''	A class for filtering SNPs in VCF files	'''
+	'''	A class for filtering SNPs with threshold values in VCF files	'''
 	def __init__(self, vcffilename, vcfoutfile, frequency=70, pvalue=0.05, genotype='any', genotype_quality=20, raw_read_depth=5, quality_read_depth=5, depth_in_reference=5, depth_in_variant=5):
 		"""
 		Initializes the filter threshold values
@@ -27,13 +27,6 @@ class snpfilter():
 	def write_snp_records(self, record):
 		self.vcf_writer.write_record(record)
 
-
-	def get_a_record(self):
-		"""
-		Gets the next snp record
-		"""
-		self.count_records+=1
-		return self.vcf_reader.next()
 	def get_samplename(self):
 		""" returns the samplename of the snp record """
 		return self.vcf_reader.samples[0]
@@ -170,5 +163,5 @@ class snpfilter():
 		for record in self.vcf_reader:
 			if self.passed_filter(record, samplename) == True:
 				self.write_snp_records(record)
-
+		self.vcf_writer.close()
 		return
