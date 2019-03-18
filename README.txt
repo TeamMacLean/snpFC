@@ -9,7 +9,7 @@ Requirement
 
 Command line Usage
 
-1)python /home/shrestha/testsnpfc/lib/python3.6/site-packages/snpfc/snpfc.py --help
+1) snpfc.py --help
 
 	usage: snpfc.py [-h] [--vcf VCF [VCF ...]] [--filter] [--compare]
 	                [--frequency FREQUENCY] [--pvalue PVALUE]
