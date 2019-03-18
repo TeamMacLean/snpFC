@@ -2,7 +2,7 @@ import os
 import vcf
 
 
-class Compare():
+class snpcompare():
 
 	"class to compare SNPs from multiple VCFs"
 
@@ -164,7 +164,7 @@ class Compare():
 					for countindex in range(len(counts)):
 						if counts[countindex] == len(self.vcffilenames):
 								self.snp_positions[self.vcffilenames[countindex]][chromosome][position].update({"common" : True})
-		
+
 
 	def compare(self, outdir, save=True, display=False):
 		"""

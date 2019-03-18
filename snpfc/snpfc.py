@@ -7,7 +7,7 @@ rootPath=os.path.dirname(os.path.abspath(sys.argv[0]))
 sys.path.append(rootPath)
 
 from snpFilter import snpfilter
-from snpCompare import Compare
+from snpCompare import snpcompare
 
 parser=argparse.ArgumentParser(description="Script to filter the SNPs using user threshold values and compare the SNPs from multiple VCF files")
 
@@ -55,10 +55,10 @@ if  __name__ == "__main__":
 
 	if options.compare == True and options.filter == True:
 		#print("Files to compare ", filtered_files)
-		doCompare = Compare(filtered_files)
+		doCompare = snpcompare(filtered_files)
 	elif options.compare == True:
 		#print("Files to compare ", options.vcf)
-		doCompare = Compare(options.vcf)
+		doCompare = snpcompare(options.vcf)
 	else:
 		pass
 
