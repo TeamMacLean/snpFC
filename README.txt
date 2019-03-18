@@ -10,7 +10,7 @@ Requirement
 Command line Usage
 
 1)python /home/shrestha/testsnpfc/lib/python3.6/site-packages/snpfc/snpfc.py --help
-```
+
 	usage: snpfc.py [-h] [--vcf VCF [VCF ...]] [--filter] [--compare]
 	                [--frequency FREQUENCY] [--pvalue PVALUE]
 	                [--genotype GENOTYPE] [--quality GENOTYPE_QUALITY]
@@ -54,25 +54,21 @@ Command line Usage
 Usage as python module
 
 
-```
 import snpfc
 from snpfc.snpFilter import snpfilter
 dofilter = snpfilter(input.vcf, output.vcf, frequency=70, pvalue=0.05, genotype='any', genotype_quality=20, raw_read_depth=5, quality_read_depth=5, depth_in_reference=5, depth_in_variant=5)
 dofilter.filter()
-```
+
 This will filter the SNPs and save in output.vcf file.
 
-```
+
 from snpCompare import snpcompare
 docompare = snpcompare(input1.vcf, input2.vcf, input3.vcf)
 docompare.compare()
 
-```
 
 This will compare the SNPs in the input files and save the output in the files - input1_snpcompare.txt, input2_snpcompare.txt and input3_snpcompare.txt in the current working directory.
 
-```
 docompare.compare(output_directory)
-```
 
 This will save the output files in the output directory specified.
