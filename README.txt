@@ -44,7 +44,9 @@ Command line Usage
 	                        Depth in variant of the SNP call. Default: 5
 	  --show                Display the results on the screen
 	  --outdir OUTDIR       Path to the output folder. Default: Current working
-                        directory```
+                        directory
+
+```
 
 2) python3 scripts/snpfc.py --vcf testfiles/test1.vcf testfiles/test2.vcf testfiles/test3.vcf --filter --outdir ./
 3) python3 scripts/snpfc.py --vcf testfiles/test1.vcf testfiles/test2.vcf testfiles/test3.vcf --filter --compare --outdir ./
