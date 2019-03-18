@@ -1,9 +1,10 @@
+import setuptools
 from distutils.core import setup
 
 setup(
     name='snpfc',
-    version='0.1',
-    packages=['snpfc',],
+    version='0.2.3',
+    packages=setuptools.find_packages(),
     license='Open Software License',
     long_description=open('README.md').read(),
 	url="https://github.com/TeamMacLean/snpFC",
@@ -14,25 +15,33 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 0.0.1-beta',
+        'Development Status :: 4 - Beta',
 
         # Indicate who your project is intended for
-        'Intended Audience :: Bioinformatics',
-        'Topic :: SNP Filter and Compare :: SNP Analysis',
+        'Intended Audience :: Science/Research',
+        'Topic :: Scientific/Engineering :: Bio-Informatics',
 
         # Pick your license as you wish
-        'License :: Open Software License 3.0 :: osl-3.0',
+        'License :: OSI Approved :: Python Software Foundation License',
 
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
         # These classifiers are *not* checked by 'pip install'. See instead
         # 'python_requires' below.
 
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3',
+		'Programming Language :: Python :: 3.0',
+		'Programming Language :: Python :: 3.1',
+		'Programming Language :: Python :: 3.2',
+		'Programming Language :: Python :: 3.3',
+		'Programming Language :: Python :: 3.4',
+		'Programming Language :: Python :: 3.5',
+		'Programming Language :: Python :: 3.6',
+		'Programming Language :: Python :: 3.7',
+		'Programming Language :: Python :: 3.8',
 		],
 	keywords='snp, filter, compare, vcf',
-	python_requires='3.6+',
+	python_requires='>=3',
 	install_requires=['pyvcf'],
 
 
