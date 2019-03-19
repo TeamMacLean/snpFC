@@ -30,10 +30,6 @@ class snpfilter():
 	def get_samplename(self):
 		""" returns the samplename of the snp record """
 		return self.vcf_reader.samples[0]
-	def get_record_calldata(self, record):
-		""" gets a snp record call data from pyVCF object"""
-		self.recordcall = record.genotype(self.sample)
-		return self.recordcall
 
 	def get_frequency(self, record, sample):
 		'return frequency of SNP genotype'
@@ -62,9 +58,6 @@ class snpfilter():
 		'return genotype quality'
 		call=record.genotype(sample)
 		return int(call.data.GQ)
-	# def get_avg_sample_depth(self, record, sample):
-	# 	call=record.genotype(sample)
-	# 	return int(call.data.ADP)
 	def get_raw_read_depth(self, record, sample):
 		""" returns raw read depth of the snp record"""
 		call=record.genotype(sample)
