@@ -8,12 +8,11 @@ python:
     - 3.4
     - 3.5
     - 3.6
-    - 3.7
+    - 3.7.1
+    - 3.7.2
 
-before-script:
-    install:
-        echo "Installing pyVCF"
-        pip install pyvcf
+install:
+    pip install pyvcf
 
 script:
     echo "Unit testing snpFilter.py"
