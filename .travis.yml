@@ -15,8 +15,7 @@ install:
     pip install pyvcf
 
 script:
-    echo "Unit testing snpFilter.py"
-    ./unittest/test_snpFilter.py
+    python ./unittest/test_snpFilter.py
     #echo "Unit testing snpCompare.py"
     #./unittest/test_snpCompare.py
 
