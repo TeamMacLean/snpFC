@@ -1,7 +1,6 @@
 [![Build Status](https://travis-ci.com/TeamMacLean/snpFC.svg?branch=master)](https://travis-ci.com/TeamMacLean/snpFC)
-![GitHub](https://img.shields.io/github/license/tsl-ramkrishna/https://github.com/TeamMacLean/snpFC.svg)
-![GitHub package.json version](https://img.shields.io/github/package-json/v/tsl-ramkrishna/https://github.com/TeamMacLean/snpFC.svg)
 ![GitHub All Releases](https://img.shields.io/github/downloads/tsl-ramkrishna/https://github.com/TeamMacLean/snpFC/total.svg)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/3.svg)
 
 ## Introduction
 
