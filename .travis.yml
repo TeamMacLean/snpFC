@@ -32,14 +32,12 @@ python:
     - 3.3.5
     - 3.3.3
 
-
 install:
-    pip install pyvcf
+    - pip install pyvcf
 
 script:
-    python ./unittest/test_snpFilter.py
-    #echo "Unit testing snpCompare.py"
-    python ./unittest/test_snpCompare.py
+    - python ./unittest/test_snpFilter.py
+    - python ./unittest/test_snpCompare.py
 
 notifications:
     email: true
