@@ -22,7 +22,7 @@ class test_Compare(unittest.TestCase):
 
 	def test_record_all_snps(self):
 		self.docompare.record_all_snps(self.test1, 'chr1', 100, 'A', 'G')
-		self.assertEqual(list(self.docompare.snp_positions[self.test1]['chr1'].keys()), (['775', '100']))
+		self.assertIn('100', list(self.docompare.snp_positions[self.test1]['chr1'].keys()))
 
 	def test_get_snp_data(self):
 		self.assertEqual(self.docompare.get_snp_data(), None)
