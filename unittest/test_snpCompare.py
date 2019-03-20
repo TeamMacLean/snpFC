@@ -22,26 +22,26 @@ class test_Compare(unittest.TestCase):
 
 	def test_record_all_snps(self):
 		self.docompare.record_all_snps(self.test1, 'chr1', 100, 'A', 'G')
-		self.assertEqual(self.docompare.snp_positions, {
-				self.test1: {'chr1': {'100': {'ref':'A', 'alt':'G'}, '775': {'ref': 'A', 'alt': 'G'} } },
-				self.test2: {'chr1': {'775': {'ref':'A', 'alt':'G'},  '776': {'ref': 'T', 'alt': 'C'} } }
-				})
+		self.assertEqual(list(self.docompare.snp_positions[self.test1]['chr1'].keys()), (['775', '100']))
 
 	def test_get_snp_data(self):
 		self.assertEqual(self.docompare.get_snp_data(), None)
 	def test_count_list_elements_occurrences(self):
 		self.assertEqual(self.docompare.count_list_elements_occurrences(['A', 'T','A','C','G', 'G']), [2,1,2,1,2,2])
 	def test_get_unique_snps(self):
-		print(self.docompare.snpsites)
-		print(self.docompare.snp_positions)
 		self.docompare.get_snp_data()
-		print(self.docompare.snpsites)
 		self.docompare.get_unique_snps()
-		print(self.docompare.snp_positions)
 		self.assertEqual(self.docompare.snp_positions, {
 				self.test1: {'chr1': {'775': {'ref': 'A', 'alt': 'G'}}},
 				self.test2: {'chr1': {'775': {'ref':'A', 'alt':'G'},  '776': {'ref': 'T', 'alt': 'C', 'unique':True} } }
 				}  )
+	def test_get_common_snps(self):
+		self.docompare.get_snp_data()
+		self.docompare.get_common_snps()
+		self.assertDictEqual(self.docompare.snp_positions, {
+				self.test1: {'chr1': {'775': {'ref': 'A', 'alt': 'G', 'common':True}}},
+				self.test2: {'chr1': {'775': {'ref':'A', 'alt':'G', 'common':True},  '776': {'ref': 'T', 'alt': 'C'} } }
+				})
 
 
 	#

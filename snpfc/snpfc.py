@@ -54,15 +54,19 @@ if  __name__ == "__main__":
 			#print("VCF filtering done for ", vcffilename, " Filtered output vcf file is ", outfilename)
 
 	if options.compare == True and options.filter == True:
-		#print("Files to compare ", filtered_files)
+		print("Filter :", True, ", Compare: ", True)
+		print("Files to compare ", filtered_files)
 		doCompare = snpcompare(filtered_files)
+		doCompare.compare(options.outdir)
 	elif options.compare == True:
-		#print("Files to compare ", options.vcf)
+		print("Filter :", False, ", Compare: ", True)
+		print("Files to compare ", options.vcf)
 		doCompare = snpcompare(options.vcf)
+		doCompare.compare(options.outdir)
 	else:
 		pass
 
-	doCompare.compare(options.outdir)
+
 	#print("SNPs comparison completed. Files are output in ", options.outdir)
 
 	exit(0)

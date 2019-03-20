@@ -39,7 +39,7 @@ install:
 script:
     python ./unittest/test_snpFilter.py
     #echo "Unit testing snpCompare.py"
-    #./unittest/test_snpCompare.py
+    python ./unittest/test_snpCompare.py
 
 notifications:
     email: true
