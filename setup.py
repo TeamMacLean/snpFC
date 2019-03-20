@@ -3,7 +3,7 @@ from distutils.core import setup
 
 setup(
     name='snpfc',
-    version='0.2.3',
+    version='0.2.4',
     packages=setuptools.find_packages(),
     license='Open Software License',
     long_description=open('README.md').read(),
