@@ -72,7 +72,7 @@ This will filter the SNPs and save in output.vcf file.
 
 ```
 from snpCompare import snpcompare
-docompare = snpcompare(input1.vcf, input2.vcf, input3.vcf)
+docompare = snpcompare([input1.vcf, input2.vcf, input3.vcf])	# takes array of input files
 docompare.compare()
 
 ```

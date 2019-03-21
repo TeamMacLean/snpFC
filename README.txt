@@ -46,7 +46,6 @@ Command line Usage
 	  --outdir OUTDIR       Path to the output folder. Default: Current working
                         directory
 
-```
 
 2) python3 scripts/snpfc.py --vcf testfiles/test1.vcf testfiles/test2.vcf testfiles/test3.vcf --filter --outdir ./
 3) python3 scripts/snpfc.py --vcf testfiles/test1.vcf testfiles/test2.vcf testfiles/test3.vcf --filter --compare --outdir ./
