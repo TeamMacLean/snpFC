@@ -3,7 +3,7 @@ from distutils.core import setup
 
 setup(
     name='snpfc',
-    version='0.2.4',
+    version='1.0.1',
     packages=setuptools.find_packages(),
     license='Open Software License',
     long_description=open('README.md').read(),
@@ -15,7 +15,7 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
 
         # Indicate who your project is intended for
         'Intended Audience :: Science/Research',
@@ -29,7 +29,7 @@ setup(
         # These classifiers are *not* checked by 'pip install'. See instead
         # 'python_requires' below.
 
-        'Programming Language :: Python :: 3',
+		'Programming Language :: Python :: 3',
 		'Programming Language :: Python :: 3.0',
 		'Programming Language :: Python :: 3.1',
 		'Programming Language :: Python :: 3.2',
