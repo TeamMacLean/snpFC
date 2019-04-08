@@ -4,17 +4,19 @@ import vcf
 
 class SnpCompare:
 
-    "class to compare SNPs from multiple VCFs"
+    "class to compare SNPs from multiple VCFs."
 
     def __init__(self, vcffiles):
-
+        """Initializes the object with vcf files and data structure variables to compare snps."""
         self.vcffilenames = vcffiles
         self.snpsites = {}
         self.snp_positions = {}
 
     def _record_all_snp_positions(self, chromosome, position):
         """
-			records all chromosome and positions in global variable (dictionary data structure) and initializes with an array of False boolean values for each vcf input file
+            creates datastructure to store snp positions.
+
+			Records all chromosome and positions in global variable (dictionary data structure) and initializes with an array of False boolean values for each vcf input file
 			Each boolean value is a positional value of a snp in input vcf files in an array.
 			E.g. if input vcf files are ["test1.vcf", "test2.vcf", "test3.vcf"]
 			snpsites["chr1"]["1"] = [False, False, False]
@@ -44,6 +46,8 @@ class SnpCompare:
 
     def _record_all_snps(self, filename, chromosome, position, ref, alt):
         """
+            creates datastructure to store all snps and it's relevant information.
+
 			append the snp records to the dictionary data structure once they passed the filter
 
 			:type filename: string
@@ -112,7 +116,7 @@ class SnpCompare:
 
     def _get_snp_data(self):
 
-        """ reads chromosome, position, reference and alternative columns for SNPs and store in dict data structure"""
+        """ reads chromosome, position, reference and alternative columns for SNPs and store in dict data structure."""
 
         vcf_counter = 0
         for filename in self.vcffilenames:
@@ -138,7 +142,7 @@ class SnpCompare:
 
     def count_list_elements_occurrences(self, alt_bases):
         """
-			counts number of each element of input array
+			counts number of each element of input array.
 
 			:type alt_bases: Array
 			:param alt_bases: alternate bases from all VCF files for same chromosome and position. e.g. ["A", "T", "A", "T,C"]
@@ -209,7 +213,7 @@ class SnpCompare:
 
     def get_common_snps(self):
 
-        """ records SNPs common to all VCF input files """
+        """ records SNPs common to all VCF input files. """
 
         for chromosome in self.snpsites.keys():
             for position in self.snpsites[chromosome].keys():
@@ -233,7 +237,7 @@ class SnpCompare:
 
     def compare(self, outdir, save=True, display=False):
         """
-			save the common/unique snps to files and/or display the results
+			save the common/unique snps to files and/or display the results.
 
 			:type outdir: string
 			:param outdir: output directory to save the output files
