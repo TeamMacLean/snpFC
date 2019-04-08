@@ -9,7 +9,7 @@ rootPath=os.path.dirname(os.path.abspath(sys.argv[0])) + "/.."
 sourcePath=rootPath + "/snpfc"
 sys.path.append(sourcePath)
 
-from snpFilter import snpfilter
+from snpFilter import SnpFilter
 
 
 class test_snpfilter(unittest.TestCase):
@@ -18,17 +18,17 @@ class test_snpfilter(unittest.TestCase):
 	testfile = rootPath + "/testfiles/test1.vcf"
 	outfile = rootPath + "/testfiles/test_test1_filtered.vcf"
 
-	dofilter = snpfilter(testfile, outfile)
+	dofilter = SnpFilter(testfile, outfile)
 
 	def test_open_vcf(self):
-		self.assertEqual(self.dofilter.open_vcf(), None)
+		self.assertEqual(self.dofilter._open_vcf(), None)
 	def test_write_vcf(self):
-		self.assertEqual(self.dofilter.write_vcf(), None)
+		self.assertEqual(self.dofilter._write_vcf(), None)
 	def test_get_samplename(self):
-		self.dofilter.open_vcf()
+		self.dofilter._open_vcf()
 		self.assertEqual(self.dofilter.get_samplename(), 'Sample1')
 	def test_values(self):
-		self.dofilter.open_vcf()
+		self.dofilter._open_vcf()
 		record=next(self.dofilter.vcf_reader)
 		sample=self.dofilter.vcf_reader.samples[0]
 		self.assertEqual(self.dofilter.get_frequency(record, sample), 75)
@@ -43,7 +43,7 @@ class test_snpfilter(unittest.TestCase):
 	def test_check_threshold_value(self):
 		self.assertTrue(self.dofilter.check_threshold_value(10, 1))
 	def test_check_frequency(self):
-		self.dofilter.open_vcf()
+		self.dofilter._open_vcf()
 		record=next(self.dofilter.vcf_reader)
 		sample=self.dofilter.vcf_reader.samples[0]
 		self.assertTrue(self.dofilter.check_frequency(record, sample, 75))
